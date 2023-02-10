@@ -6,9 +6,7 @@ const refs = {
 
 refs.elForm.addEventListener('submit', e => {
     e.preventDefault();
-    const {
-        elements: { delay, step, amount }
-    } = e.currentTarget;
+    const { delay, step, amount } = e.currentTarget;
 
     const Ndelay = Number(delay.value);
     let Nstep = Ndelay;
