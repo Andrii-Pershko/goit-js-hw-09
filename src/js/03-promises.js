@@ -8,25 +8,22 @@ refs.elForm.addEventListener('submit', e => {
     e.preventDefault();
     const { delay, step, amount } = e.currentTarget;
 
-    const Ndelay = Number(delay.value);
-    let Nstep = Ndelay;
-    const Namount = Number(amount.value);
+    const nDelay = Number(delay.value);
+    let nStep = nDelay;
+    const nAmount = Number(amount.value);
 
-    for (let i = 1; i <= Namount; i++) {
+    for (let i = 1; i <= nAmount; i++) {
 
-        createPromise(i, Nstep)
+        createPromise(i, nStep)
             .then(({ position, delay }) => {
                 Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
             })
             .catch(({ position, delay }) => {
                 Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
             });
-        Nstep += Number(step.value)
+        nStep += Number(step.value)
 
     }
-
-
-
 
 });
 
